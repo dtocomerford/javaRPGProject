@@ -1,0 +1,80 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Player 
+{
+	public static String name;
+	public static int health;
+	public static int maxHP;
+	public static int defence;
+	public static int attack;
+	public static int xp;
+	public static int mana;
+	public static int maxMana;
+	public static int level;
+	public static int speed;
+	public static boolean fighting;
+	
+	public static String userInput;
+	
+	//Creating object of each class type
+	public static playerClass mage = new playerClass();
+	public static playerClass warrior = new playerClass();
+	public static playerClass archer = new playerClass();
+	public static playerClass peasant = new playerClass();
+	
+	
+	static ArrayList<String> classes = new ArrayList<String>();
+	
+	public static Scanner input = new Scanner(System.in);
+
+	
+	
+	
+	public static void main(String[] args) 
+	{
+		Player player1 = new Player();
+		
+	}
+	
+	public static void createPlayer()
+	{	
+		classes.add("Mage  (M)");
+		classes.add("Warrior  (W)");
+		classes.add("Archer  (A)");
+		classes.add("Peasant  (P)");
+		
+		
+		for(int i =0; i < classes.size(); i++)
+		{
+			System.out.println(classes.get(i));
+		}
+		
+		System.out.println("Enter first letter to select class: ");
+		userInput = input.next().toUpperCase();
+		
+		//need to print classes from the cplayerClass class
+		switch(userInput)
+		{
+		case "M":
+			System.out.println("You have selected Mage Stats are:");
+			mage.giveMageStats(mage);
+			mage.printClassStats(mage);
+			break;
+		case "W":
+			System.out.println("You have selected Warrior");
+			break;
+		case "A":
+			System.out.println("You have selected Archer");
+			break;
+		case "P":
+			System.out.println("You have selected Peasant");
+			break;
+		}
+		
+		
+		
+	}
+
+}
