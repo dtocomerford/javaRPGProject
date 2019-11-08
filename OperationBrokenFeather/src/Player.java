@@ -36,14 +36,13 @@ public class Player
 	Player player1 = new Player();
 	
 	
-	public static void main(String[] args) 
-	{
-		
-		
-	}
-	
 	public static void createPlayer()
 	{	
+		
+		System.out.println("Enter name of your character: ");
+		name = input.next().toUpperCase();
+		System.out.println();
+		
 		classes.add("Mage  (M)");
 		classes.add("Warrior  (W)");
 		classes.add("Archer  (A)");
@@ -76,8 +75,6 @@ public class Player
 			System.out.println("You have selected Peasant");
 			break;
 		}
-		
-		
 		
 	}
 

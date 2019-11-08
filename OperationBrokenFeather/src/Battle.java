@@ -16,60 +16,57 @@ public class Battle
     public static void fight(Player player1, enemy _enemy)
     {
         
-        if(player1.speed > _enemy.speed)
+    	while(isGameOver == false)
         {
-            while(isGameOver == false)
+            System.out.println("----- FIGHT MENU -----");
+            System.out.println("1. \t Attack");
+            System.out.println("2. \t Run Away");
+            System.out.println("3. \t Insult");    
+            
+            userInput = input.nextInt();
+            
+            switch(userInput)
             {
-                System.out.println("----- FIGHT MENU -----");
-                System.out.println("1. \t Attack");
-                System.out.println("2. \t Run Away");
-                System.out.println("3. \t Insult");    
-                
-                userInput = input.nextInt();
-                
-                switch(userInput)
-                {
-                case 1:
-                    attack(player1, _enemy);
-                    checkIfGameOver(player1, _enemy);
-                    break;
-                case 2:
-                    //runAway(player1, _enemy);
-                    break;
-                case 3:
-                    System.out.println(insult(player1));
-                    break;
-                }
-                
-                System.out.println();
-                
-                
-                System.out.println("----- FIGHT MENU -----");
-                System.out.println("1. \t Attack");
-                System.out.println("2. \t Run Away");
-                System.out.println("3. \t Insult");    
-                
-                userInput = input.nextInt();
-                
-                switch(userInput)
-                {
-                case 1:
-                    attack(player1, _enemy);
-                    checkIfGameOver(player1, _enemy);
-                    break;
-                case 2:
-                    //runAway(_enemy, player1);
-                    break;
-                case 3:
-                    //System.out.println(insult(_enemy));
-                    break;
-                }
-                
-                System.out.println();
+            case 1:
+                attack(player1, _enemy);
+                checkIfGameOver(player1, _enemy);
+                break;
+            case 2:
+                //runAway(player1, _enemy);
+                break;
+            case 3:
+                System.out.println(insult(player1));
+                break;
             }
             
-            enemyAttack(_enemy, player1);
+            System.out.println();
+            
+            
+            System.out.println("----- FIGHT MENU -----");
+            System.out.println("1. \t Attack");
+            System.out.println("2. \t Run Away");
+            System.out.println("3. \t Insult");    
+            
+            userInput = input.nextInt();
+            
+            switch(userInput)
+            {
+            case 1:
+                attack(player1, _enemy);
+                checkIfGameOver(player1, _enemy);
+                break;
+            case 2:
+                //runAway(_enemy, player1);
+                break;
+            case 3:
+                //System.out.println(insult(_enemy));
+                break;
+            }
+            
+            System.out.println();
         }
+        
+        enemyAttack(_enemy, player1);
     }
         
     

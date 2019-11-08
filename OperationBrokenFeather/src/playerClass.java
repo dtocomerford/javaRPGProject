@@ -58,7 +58,7 @@ public class playerClass
 		
 	}
 	
-	public static void giveWarriorStats(playerClass warrior) 
+	public static void giveWarriorStats(playerClass warrior, Player player) 
 	{ 
 		warrior.className = "Warrior"; 
 		warrior.attack = 80; 
@@ -67,9 +67,19 @@ public class playerClass
 		warrior.health = 50; 
 		warrior.mana = 30; 
 		warrior.combatPower = 75; 
+		
+		//Set our players stats to that of a mage
+		player.attack = warrior.attack;
+		player.defence = warrior.defence;
+		player.accuracy = warrior.accuracy;
+		player.health += warrior.health;
+		player.mana = warrior.mana;
+		player.combatPower = warrior.combatPower;
+				
+		player.characterType = "Warrior";
 	} 
 	 
-	public static void giveArcherStats(playerClass archer) 
+	public static void giveArcherStats(playerClass archer, Player player) 
 	{ 
 		archer.className = "Archer"; 
 		archer.attack = 40; 
@@ -78,9 +88,19 @@ public class playerClass
 		archer.health = 40; 
 		archer.mana = 30; 
 		archer.combatPower = 70; 
+		
+		//Set our players stats to that of a mage
+		player.attack = archer.attack;
+		player.defence = archer.defence;
+		player.accuracy = archer.accuracy;
+		player.health += archer.health;
+		player.mana = archer.mana;
+		player.combatPower = archer.combatPower;
+						
+		player.characterType = "Archer";
 	} 
 	 
-	public static void givePeasantStats(playerClass peasant) 
+	public static void givePeasantStats(playerClass peasant, Player player) 
 	{ 
 		peasant.className = "Peasant"; 
 		peasant.attack = 15; 
@@ -89,7 +109,15 @@ public class playerClass
 		peasant.health = 20; 
 		peasant.mana = 1; 
 		peasant.combatPower = 10; 
+		
+		//Set our players stats to that of a mage
+		player.attack = peasant.attack;
+		player.defence = peasant.defence;
+		player.accuracy = peasant.accuracy;
+		player.health += peasant.health;
+		player.mana = peasant.mana;
+		player.combatPower = peasant.combatPower;
+								
+		player.characterType = "Peasant";
 	} 
-	 
-
 }
