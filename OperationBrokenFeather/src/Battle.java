@@ -68,6 +68,7 @@ public class Battle
                 System.out.println();
             }
             
+            enemyAttack(_enemy, player1);
         }
     }
         
@@ -139,6 +140,17 @@ public class Battle
             isGameOver = true;
         }
     }
+    
+    public static void enemyAttack(enemy _enemy, Player player1)
+    {
+    	int damage;
+    	damage = _enemy.attack - player1.defence;
+    	damage += random.nextInt(5);
+    	player1.health -= damage;
+    	System.out.println(_enemy.name + " attacks " + player1.name + " dealing " + damage + " damage");
+    	System.out.println(player1.name + "'s health is now " + player1.health);
+    }
+    
 }
  
  

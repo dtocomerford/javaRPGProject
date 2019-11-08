@@ -20,12 +20,7 @@ public class playerClass
 		playerClass Mage = new playerClass();
 		playerClass Warrior = new playerClass();
 		playerClass Archer = new playerClass();
-		playerClass Peasant = new playerClass();
-		
-		
-		
-		
-		
+		playerClass Peasant = new playerClass();		
 	}
 	
 	public static void printClassStats(playerClass playerclass)
@@ -39,8 +34,9 @@ public class playerClass
 		System.out.println("Combat Power " + playerclass.combatPower);
 	}
 	
-	public static void giveMageStats(playerClass mage)
+	public static void giveMageStats(playerClass mage, Player player)
 	{
+		//Give the mage class set stats 
 		mage.className = "Mage";
 		mage.attack = 40;
 		mage.defence = 25;
@@ -48,6 +44,18 @@ public class playerClass
 		mage.health = 40;
 		mage.mana = 80;
 		mage.combatPower = 65;
+		
+		//Set our players stats to that of a mage
+		player.attack = mage.attack;
+		player.defence = mage.defence;
+		player.accuracy = mage.accuracy;
+		player.health += mage.health;
+		player.mana = mage.mana;
+		player.combatPower = mage.combatPower;
+		
+		player.characterType = "Mage";
+		
+		
 	}
 	
 	public static void giveWarriorStats(playerClass warrior) 

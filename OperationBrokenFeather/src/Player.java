@@ -5,14 +5,17 @@ import java.util.Scanner;
 public class Player 
 {
 	public static String name;
-	public static int health;
+	public static String characterType;
+	public static int health = 100;
 	public static int maxHP;
 	public static int defence;
 	public static int attack;
+	public static int accuracy;
 	public static int xp;
 	public static int mana;
 	public static int maxMana;
 	public static int level;
+	public static int combatPower;
 	public static int speed;
 	public static boolean fighting;
 	
@@ -29,12 +32,13 @@ public class Player
 	
 	public static Scanner input = new Scanner(System.in);
 
-	
+	public static 
+	Player player1 = new Player();
 	
 	
 	public static void main(String[] args) 
 	{
-		Player player1 = new Player();
+		
 		
 	}
 	
@@ -59,7 +63,7 @@ public class Player
 		{
 		case "M":
 			System.out.println("You have selected Mage Stats are:");
-			mage.giveMageStats(mage);
+			mage.giveMageStats(mage, player1);
 			mage.printClassStats(mage);
 			break;
 		case "W":
