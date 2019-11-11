@@ -39,7 +39,7 @@ public class playerClass
 		//Give the mage class set stats 
 		mage.className = "Mage";
 		mage.attack = 40;
-		mage.defence = 25;
+		mage.defence = 35;
 		mage.accuracy = 35;
 		mage.health = 40;
 		mage.mana = 80;
@@ -61,7 +61,7 @@ public class playerClass
 	public static void giveWarriorStats(playerClass warrior, Player player) 
 	{ 
 		warrior.className = "Warrior"; 
-		warrior.attack = 80; 
+		warrior.attack = 55; 
 		warrior.defence = 45;
 		warrior.accuracy = 40; 
 		warrior.health = 50; 

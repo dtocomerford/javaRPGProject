@@ -37,7 +37,7 @@ public class enemy
 			{ 
 				case 1: 
 					enemy1.name = "Hobgoblin"; 
-					enemy1.defence = 30; 
+					enemy1.defence = 20; 
 					enemy1.attack = 50; 
 					enemy1.mana = 1; 
 					enemy1.combatPower = 40; 
@@ -46,7 +46,7 @@ public class enemy
 					break; 
 				case 2:  
 					enemy1.name = "Frost Giant"; 
-					enemy1.defence = 80; 
+					enemy1.defence = 40; 
 					enemy1.attack = 20; 
 					enemy1.mana = 1; 
 					enemy1.combatPower = 50; 

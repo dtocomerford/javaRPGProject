@@ -67,12 +67,18 @@ public class Player
 			break;
 		case "W":
 			System.out.println("You have selected Warrior");
+			warrior.giveWarriorStats(warrior, player1);
+			warrior.printClassStats(warrior);
 			break;
 		case "A":
 			System.out.println("You have selected Archer");
+			archer.giveArcherStats(archer, player1);
+			archer.printClassStats(archer);
 			break;
 		case "P":
 			System.out.println("You have selected Peasant");
+			peasant.givePeasantStats(peasant, player1);
+			peasant.printClassStats(peasant);
 			break;
 		}
 		

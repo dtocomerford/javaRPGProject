@@ -29,10 +29,14 @@ public class Battle
             {
             case 1:
                 attack(player1, _enemy);
-                checkIfGameOver(player1, _enemy);
+                isGameOver = checkIfGameOver(player1, _enemy);
+                if(isGameOver == true)
+                {
+                	return;
+                }
                 break;
             case 2:
-                //runAway(player1, _enemy);
+                runAway(player1, _enemy);
                 break;
             case 3:
                 System.out.println(insult(player1));
@@ -40,7 +44,10 @@ public class Battle
             }
             
             System.out.println();
-            
+            if(isGameOver != true)
+            {
+            	enemyAttack(_enemy, player1);
+            }
             
             System.out.println("----- FIGHT MENU -----");
             System.out.println("1. \t Attack");
@@ -53,20 +60,27 @@ public class Battle
             {
             case 1:
                 attack(player1, _enemy);
-                checkIfGameOver(player1, _enemy);
+                isGameOver = checkIfGameOver(player1, _enemy);
+                if(isGameOver == true)
+                {
+                	return;
+                }
                 break;
             case 2:
-                //runAway(_enemy, player1);
+                runAway(player1, _enemy);
                 break;
             case 3:
-                //System.out.println(insult(_enemy));
+                System.out.println(insult(player1));
                 break;
             }
             
             System.out.println();
-        }
-        
-        enemyAttack(_enemy, player1);
+            if(isGameOver != true)
+            {
+            	enemyAttack(_enemy, player1);
+            }
+            System.out.println();
+        }   
     }
         
     
@@ -80,13 +94,13 @@ public class Battle
     }
     
     
-    public static void runAway(Player player1, Player player2)
+    public static void runAway(Player player1, enemy _enemy)
     {
-        if(player1.speed > player2.speed)
+        if(player1.speed > _enemy.speed)
         {
             System.out.println();
             System.out.println(player1.name + " flees the fight like a coward");
-            System.out.println(player2.name + " turns and walks away");
+            System.out.println(_enemy.name + " turns and walks away");
             
             isGameOver = true;
         }
@@ -103,10 +117,10 @@ public class Battle
     {
         System.out.println(player1.name + " attacks " + _enemy.name);
         
-        int randomDamage = random.nextInt((4 - 2) + 1) + 2;
+        int randomDamage = random.nextInt((4 - 3) + 1) + 3;
         damage = player1.attack - _enemy.defence;
         damage += randomDamage;
-        
+        System.out.println(randomDamage);
         if(damage < 0)
         {
             damage = 0;
@@ -117,32 +131,43 @@ public class Battle
     }
     
     
-    public static void checkIfGameOver(Player player1, enemy _enemy)
+    public static boolean checkIfGameOver(Player player1, enemy _enemy)
     {
         if(player1.health <= 0)
         {
             System.out.println();
-            System.out.println(player1.name + "'s health is " + player1.health);
+            System.out.println(player1.name + " is dead!");
             System.out.println(_enemy.name + " wins!");
             
             isGameOver = true;
+            return true;
         }
-        
-        if(_enemy.health <= 0)
+        else if(_enemy.health <= 0)
         {
             System.out.println();
-            System.out.println(_enemy.name + "'s health is " + _enemy.health);
+            System.out.println(_enemy.name + " is dead!");
             System.out.println(player1.name + " wins!");
             
             isGameOver = true;
+            return true;
         }
+        else
+        {
+        	return false;
+        }
+        
     }
     
     public static void enemyAttack(enemy _enemy, Player player1)
     {
     	int damage;
     	damage = _enemy.attack - player1.defence;
-    	damage += random.nextInt(5);
+    	if(damage <= 0)
+    	{
+    		damage = 0;
+    	}
+    	damage += random.nextInt((4 - 3) + 1) + 3;
+    	System.out.println(damage);
     	player1.health -= damage;
     	System.out.println(_enemy.name + " attacks " + player1.name + " dealing " + damage + " damage");
     	System.out.println(player1.name + "'s health is now " + player1.health);
