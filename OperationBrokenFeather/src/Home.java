@@ -13,6 +13,8 @@ public class Home {
 		
 		
 		battle.fight(_player, _enemy);
+		
+		System.out.print("End!!!!!!!!!!!!");
 	}
 
 }
