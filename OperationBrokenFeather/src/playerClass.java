@@ -32,6 +32,7 @@ public class playerClass
 		System.out.println("Mana " + playerclass.mana);
 		System.out.println("Health "+ playerclass.health);
 		System.out.println("Combat Power " + playerclass.combatPower);
+		System.out.println();
 	}
 	
 	public static void giveMageStats(playerClass mage, Player player)

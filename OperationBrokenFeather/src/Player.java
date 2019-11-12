@@ -21,19 +21,21 @@ public class Player
 	
 	public static String userInput;
 	
+	static ArrayList<String> classes = new ArrayList<String>();
+	static ArrayList<String> inventory = new ArrayList<String>();
+	
+	public static Scanner input = new Scanner(System.in);
+	
+	
 	//Creating object of each class type
 	public static playerClass mage = new playerClass();
 	public static playerClass warrior = new playerClass();
 	public static playerClass archer = new playerClass();
 	public static playerClass peasant = new playerClass();
 	
+	public static Player player1 = new Player();
 	
-	static ArrayList<String> classes = new ArrayList<String>();
-	
-	public static Scanner input = new Scanner(System.in);
 
-	public static 
-	Player player1 = new Player();
 	
 	
 	public static void createPlayer()

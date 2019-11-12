@@ -1,20 +1,30 @@
 
-public class Home {
+public class Home 
+{
 
+	public static boolean gameOver = false;
+	
 	public static void main(String[] args) 
 	{	
+		Travel travel = new Travel();
 		Battle battle = new Battle();
+		Story story = new Story();
 		enemy _enemy = new enemy();
-		_enemy.generateEnemy();
-		
-		Player _player = new Player();
-		_player.createPlayer();
 		
 		
+		Player player1 = new Player();
+		player1.createPlayer();
 		
-		battle.fight(_player, _enemy);
+		story.beginingOfStory(player1);
 		
-		System.out.print("End!!!!!!!!!!!!");
+		
+		while(gameOver == false)
+		{
+			travel.travel();
+			_enemy.generateEnemy();
+			battle.fight(player1, _enemy);
+		}
+		
 	}
 
 }

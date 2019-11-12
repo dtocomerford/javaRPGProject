@@ -17,8 +17,8 @@ public class enemy
  
 	public static void main(String[] args)  
 	{ 
-		generateEnemy(); 
- 
+		generateEnemy(); 	
+		
 	} 
  
 	public static void generateEnemy() 
