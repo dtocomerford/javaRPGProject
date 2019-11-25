@@ -41,6 +41,9 @@ public class Player
 	public static void createPlayer()
 	{	
 		
+		inventory.add("Potion");
+		
+		
 		System.out.println("Enter name of your character: ");
 		name = input.next().toUpperCase();
 		System.out.println();
